@@ -1,0 +1,71 @@
+#floating_notes_window {
+    position: fixed;
+    z-index: 3000;
+    display: none;
+    flex-direction: column;
+    min-width: 160px;
+    min-height: 100px;
+    max-width: 100vw;
+    max-height: 100vh;
+    box-sizing: border-box;
+    padding: 4px;
+    background: var(--SmartThemeBlurTintColor, #222);
+    color: var(--SmartThemeBodyColor, #ddd);
+    border: 1px solid var(--SmartThemeBorderColor, #555);
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+    resize: both;
+    overflow: hidden;
+}
+
+#floating_notes_window.fn-open {
+    display: flex;
+}
+
+#floating_notes_window .fn-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 auto;
+    padding-bottom: 4px;
+}
+
+#floating_notes_window .fn-handle {
+    cursor: grab;
+    padding: 2px 8px;
+    opacity: 0.8;
+    touch-action: none;
+    user-select: none;
+}
+
+#floating_notes_window .fn-handle:hover {
+    opacity: 1;
+}
+
+#floating_notes_window.fn-dragging .fn-handle {
+    cursor: grabbing;
+}
+
+#floating_notes_window .fn-close {
+    cursor: pointer;
+    padding: 2px 8px;
+    opacity: 0.6;
+}
+
+#floating_notes_window .fn-close:hover {
+    opacity: 1;
+}
+
+#floating_notes_window textarea {
+    flex: 1 1 auto;
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    box-sizing: border-box;
+    resize: none;
+    background: transparent;
+    color: inherit;
+    border: none;
+    outline: none;
+    font: inherit;
+}
