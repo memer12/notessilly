@@ -67,12 +67,13 @@ eventSource.on(event_types.APP_INITIALIZED, () => {
             <div class="fn-handle fa-solid fa-up-down-left-right" title="Drag to move"></div>
             <div class="fn-close fa-solid fa-xmark" title="Close"></div>
         </div>
+        <div class="fn-dragzone" title="Drag to move"></div>
         <textarea placeholder="Notes..."></textarea>
     `;
     document.body.appendChild(win);
 
     const textarea = win.querySelector('textarea');
-    const handle = win.querySelector('.fn-handle');
+    const handle = win.querySelector('.fn-dragzone');
 
     // Restore saved state
     win.style.width = `${settings.w}px`;
