@@ -47,9 +47,28 @@
 }
 
 #floating_notes_window .fn-close {
+    position: relative;
+    z-index: 2;
     cursor: pointer;
     padding: 2px 8px;
     opacity: 0.6;
+}
+
+/* Invisible drag area covering the top quarter of the window */
+#floating_notes_window .fn-dragzone {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 25%;
+    z-index: 1;
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+}
+
+#floating_notes_window.fn-dragging .fn-dragzone {
+    cursor: grabbing;
 }
 
 #floating_notes_window .fn-close:hover {
